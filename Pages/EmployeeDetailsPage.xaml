@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSalesMobileApp.Pages.EmployeeDetailsPage"
+             Title="Employee Details"
+             xmlns:viewmodel="clr-namespace:MSalesMobileApp.ViewModels"
+             x:DataType="viewmodel:EmployeeDetailsViewModel">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+          Padding="10"          
+          RowSpacing="12">
+        
+       
+        <Entry Placeholder="Empoyee Number" 
+               Margin="10"/>
+
+        <Picker x:Name="picker"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                FontSize="18"
+        Title="Select a campaign">
+
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Field Agent</x:String>
+                    <x:String>Front Desk Agent</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Entry Text="Total:0.00"
+               Grid.Row="2"
+               HorizontalOptions="End"
+               Margin="10"/>
+
+        <Button Text="Next"
+                Grid.Row="3"
+                Margin="10"
+                HorizontalOptions="End"
+                Command="{Binding GotoPoliHolderCommandCommand}"
+                BackgroundColor="Orange"/>
+
+    </Grid>
+
+</ContentPage>

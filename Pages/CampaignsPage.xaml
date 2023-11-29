@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSalesMobileApp.Pages.CampaignsPage"
+             Title="Campaigns"
+             xmlns:viewmodel="clr-namespace:MSalesMobileApp.ViewModels"
+             x:DataType="viewmodel:CampaignsViewModel">
+    <Grid RowDefinitions="Auto,Auto"
+          ColumnSpacing="12"
+          RowSpacing="10">
+
+
+        <Picker x:Name="picker"
+              
+                HorizontalOptions="Center"
+                FontSize="18"
+                Title="Select a campaign">
+
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>MMKBattery</x:String>
+                    <x:String>MMKSecure</x:String>
+                    <x:String>Zali</x:String>
+                    <x:String>Vox</x:String>
+                    <x:String>Bonie yakasi</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Text="Next"
+                Grid.Row="1"
+                HorizontalOptions="End"
+                Margin="10"
+                Command="{Binding GotoCampaignCommand}"
+                BackgroundColor="Orange"/>
+    </Grid> 
+
+</ContentPage>

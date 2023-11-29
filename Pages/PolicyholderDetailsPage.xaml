@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MSalesMobileApp.Pages.PolicyholderDetailsPage"
+             Title="Policyholder Details"
+             xmlns:viewmodel="clr-namespace:MSalesMobileApp.ViewModels"
+             x:DataType="viewmodel:PolicyholderViewModel">
+    <ScrollView Margin="10">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              Margin="10"
+              Padding="10"
+              RowSpacing="12">  
+
+
+          <Entry Placeholder="First Name" 
+           Margin="10"/>
+        <Entry Placeholder="Last Name" 
+               Grid.Row="1"
+               Margin="10"/>
+
+        <Entry Placeholder="ID Number" 
+               Grid.Row="2"
+               Margin="10"/>
+
+        <Entry Placeholder="Empoyee Number"
+               Grid.Row="3"
+               Margin="10"/>
+            
+            <Label Text="Date Of Birth"
+                   Grid.Row="4"
+               HorizontalOptions="Center"/>
+            <DatePicker Grid.Row="5"
+                    HorizontalOptions="Center"/>
+
+        <Entry Placeholder="Phone Number"
+               Grid.Row="6"
+               Margin="10"/>
+        <Entry Placeholder="Alternative Phone" 
+               Grid.Row="7"
+               Margin="10"/>
+
+        <Entry Placeholder="Address" 
+               Grid.Row="8"
+               Margin="10"/>
+
+
+        <Button Text="Select File"
+                Grid.Row="9"
+                HorizontalOptions="Start"
+                Command="{Binding PickAndShowCommand} "/>
+
+        <Entry Text="Total:0.00"
+               Grid.Row="10"
+               HorizontalOptions="End"
+               Margin="10"/>   
+
+
+        <Button Text="Next"
+            Grid.Row="11"
+            HorizontalOptions="End"
+            Margin="10"
+            Command="{Binding GotoPaymentDetailsCommand}"
+            BackgroundColor="Orange"/>
+
+    </Grid>
+    </ScrollView>
+</ContentPage>
