@@ -7,28 +7,25 @@
              x:DataType="viewmodel:LoginViewModel">
     
     <Grid RowDefinitions="100,Auto,Auto,Auto,Auto"
-          RowSpacing="12">
+          RowSpacing="10">
         
         <Image Source="loginicon.png"
-               HorizontalOptions="CenterAndExpand"
-               Margin="10"/>
+               HorizontalOptions="CenterAndExpand"/>
         <Entry Placeholder="Username" 
                Text="{Binding Username}"
-               Grid.Row="1"
-               Margin="10"/>
+               Grid.Row="1" />
 
         <Entry Placeholder="Password"
                IsPassword="True"
                Text="{Binding Password}"
-               Grid.Row="2"
-               Margin="10" />
+               Grid.Row="2" />
 
         <CheckBox Grid.Row="3"
                   ToolTipProperties.Text="RememberMe"/>
         <Button Text="Sign In"
                 Grid.Row="4"
-                HorizontalOptions="Center"
-                Margin="10"
+                HorizontalOptions="End"
+               
                 Command="{Binding GotoCampaignsCommand}"
                 BackgroundColor="Orange"/>   
 

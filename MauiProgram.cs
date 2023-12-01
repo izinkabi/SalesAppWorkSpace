@@ -31,6 +31,9 @@ namespace MSalesMobileApp
 
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginViewModel>();
+
+            builder.Services.AddTransient<PaymentDetailsPage>();
+            builder.Services.AddTransient<PaymentDetailsViewModel>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

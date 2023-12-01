@@ -6,7 +6,13 @@ namespace MSalesMobileApp.ViewModels
 {
     public partial class PolicyholderViewModel : ObservableObject
     {
+        public PolicyholderViewModel()
+        {
+            SelectedFileName = "Select File";
+        }
 
+        [ObservableProperty]
+        string selectedFileName;
         [RelayCommand]
         public async Task GotoPaymentDetails()
         {
@@ -19,10 +25,12 @@ namespace MSalesMobileApp.ViewModels
             try
             {
                 var result = await FilePicker.Default.PickAsync(options);
+                SelectedFileName = result.FileName;
                 if (result != null)
                 {
                     if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
-                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith("pdf", StringComparison.OrdinalIgnoreCase))
                     {
                         using var stream = await result.OpenReadAsync();
                         var image = ImageSource.FromStream(() => stream);

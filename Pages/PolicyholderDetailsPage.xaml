@@ -44,7 +44,7 @@
                Margin="10"/>
 
 
-        <Button Text="Select File"
+        <Button Text="{Binding SelectedFileName}"
                 Grid.Row="9"
                 HorizontalOptions="Start"
                 Command="{Binding PickAndShowCommand} "/>
